@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSeatReserve">
         <activity
+            android:name=".bus_management"
+            android:exported="false"
+            android:label="@string/title_activity_bus_management"
+            android:theme="@style/Theme.BusSeatReserve.NoActionBar" />
+        <activity
             android:name=".driverLogin"
             android:exported="true" />
         <activity
