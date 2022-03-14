@@ -3,8 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gawsa/AndroidStudioProjects/BusSeatReservation/app/src/main/res/layout/activity_driver_login.xml" value="0.2" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/BusSeatReservation/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_seatt.xml" value="0.1" />
       </map>
     </option>
   </component>
