@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BusSeatReserve</string>
+    <string name="username">UserName</string>
+    <string name="dLoginbtn">Login</string>
+    <string name="fPassword">Forgot password ?</string>
+    <string name="login_txt">Login</string>
+    <string name="dPassword">Password :</string>
+    <string name="dEmail">User Name :</string>
+    <string name="uName">User Name</string>
+    <string name="uPassword">Password</string>
 </resources>
