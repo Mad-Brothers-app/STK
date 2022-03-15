@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Button driver;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void showLogin(View view) {
         Intent intent = new Intent(this, driverLogin.class);
+        startActivity(intent);
+    }
+
+    public void contentDriver(View view) {
+        Intent intent=new Intent(this,contentDriver.class);
         startActivity(intent);
     }
 }
