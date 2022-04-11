@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "460898892735",
+    "project_id": "busseatreserve",
+    "storage_bucket": "busseatreserve.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460898892735:android:d629481ed4adfeef4d7f0a",
+        "android_client_info": {
+          "package_name": "com.example.busseatreserve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460898892735-4tv2lnb424lbeg4h13s0ntr9utute3ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCceoEFpLu_GqtnmE19RjCmfkvHktnM27Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460898892735-4tv2lnb424lbeg4h13s0ntr9utute3ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
