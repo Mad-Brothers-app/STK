@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void contentDriver(View view) {
-        Intent intent=new Intent(this,register_driver.class);
-        startActivity(intent);
-    }
+//    public void contentDriver(View view) {
+//        Intent intent=new Intent(this,register_driver.class);
+//        startActivity(intent);
+//    }
 }
