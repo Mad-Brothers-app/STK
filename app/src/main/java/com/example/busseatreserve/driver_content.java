@@ -2,13 +2,11 @@ package com.example.busseatreserve;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class driverLogin extends AppCompatActivity {
+public class driver_content extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +14,6 @@ public class driverLogin extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_driver_login);
-    }
-
-    //activity change to register activity
-    public void registerUser(View view) {
-        Intent i = new Intent(this, register_driver.class);
-        startActivity(i);
+        setContentView(R.layout.activity_driver_content);
     }
 }
