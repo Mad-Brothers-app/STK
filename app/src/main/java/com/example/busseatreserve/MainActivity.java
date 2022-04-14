@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void contentView(View view) {
+        Intent i = new Intent(this, driver_content.class);
+        startActivity(i);
+    }
 }
