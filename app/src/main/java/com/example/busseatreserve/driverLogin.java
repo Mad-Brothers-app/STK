@@ -24,4 +24,9 @@ public class driverLogin extends AppCompatActivity {
         Intent i = new Intent(this, register_driver.class);
         startActivity(i);
     }
+
+    public void contentView(View view) {
+        Intent i = new Intent(this, driver_content.class);
+        startActivity(i);
+    }
 }
