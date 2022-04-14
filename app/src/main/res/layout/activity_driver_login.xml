@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wc_login"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.538"
+        android:onClick="contentView" />
 
     <TextView
         android:id="@+id/wc_login"

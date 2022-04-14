@@ -24,6 +24,7 @@
         android:layout_height="145dp"
         android:layout_marginTop="66dp"
         android:background="@color/white"
+        android:onClick="leaveRequest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
