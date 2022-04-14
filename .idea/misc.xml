@@ -5,6 +5,15 @@
       <map>
         <entry key="..\:/Users/HP/AndroidStudioProjects/BusSeatReservation/app/src/main/res/layout/activity_bus_route_display.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/BusSeatReservation/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_bus_route_display.xml" value="0.14907407407407408" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_content_driver.xml" value="0.14907407407407408" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_driver_content.xml" value="0.536" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_driver_login.xml" value="0.4" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_leave_request.xml" value="0.25" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_register_driver.xml" value="0.25" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/content_register_driver.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_seatt.xml" value="0.1" />
       </map>
     </option>
@@ -14,5 +23,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.4" />
+      </ProjectState>
+    </option>
   </component>
 </project>
