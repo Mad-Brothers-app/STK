@@ -5,31 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/reg"
-    tools:context=".register_driver">
+    tools:context=".leave_request">
 
     <TextView
-        android:id="@+id/register_msg"
+        android:id="@+id/wc_leave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="@string/register_msg"
+        android:text="@string/wc_leave"
         android:textColor="@color/black"
         android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="68dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_msg">
+        tools:layout_editor_absoluteY="125dp"
+        tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/fullName"
@@ -52,7 +62,7 @@
             android:id="@+id/leave_reason"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/reg_email" />
+            android:hint="@string/leave_reason" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -69,7 +79,8 @@
             android:id="@+id/phone_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/route" />
+            android:hint="@string/phone_no"
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -88,7 +99,8 @@
             android:id="@+id/date_leave_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/lic_no" />
+            android:hint="@string/date_leave"
+            android:inputType="date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -100,13 +112,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"
-        app:endIconMode="password_toggle">
+        app:startIconDrawable="@drawable/ic_date"
+        app:boxCornerRadiusBottomEnd="6dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/date_leave_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/reg_password"
+            android:hint="@string/date_leave_end"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -128,32 +141,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
-            android:inputType="textPassword" />
+            android:inputType="date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/register_driver"
         android:layout_width="325dp"
         android:layout_height="49dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="84dp"
         android:text="@string/register_driver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
-
-
-    <TextView
-        android:id="@+id/alredy_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:clipToOutline="true"
-        android:onClick="loginUser"
-        android:text="@string/alredy_account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

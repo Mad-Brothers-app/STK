@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/user_name"
+            android:id="@+id/user_name_sal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_name"
@@ -64,7 +64,7 @@
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/reg_password"
+            android:id="@+id/date_leave_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
