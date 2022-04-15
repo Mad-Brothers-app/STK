@@ -11,14 +11,13 @@
         android:id="@+id/wc_leave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/wc_leave"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +26,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wc_leave"
@@ -86,6 +85,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
@@ -109,14 +109,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"
         app:startIconDrawable="@drawable/ic_date"
-        app:boxCornerRadiusBottomEnd="6dp">
+        app:boxCornerRadiusBottomEnd="6dp"
+        android:clipToOutline="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/date_leave_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/date_leave_end"
-            android:inputType="textPassword" />
+            android:inputType="date" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -130,25 +131,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
-        app:endIconMode="password_toggle">
+        app:startIconDrawable="@drawable/ic_baseline_location_on_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/confirm_password"
+            android:id="@+id/route_area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/confirm_password"
-            android:inputType="date" />
+            android:hint="@string/route_area"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/request_leave"
+        android:id="@+id/request_leave2"
         android:layout_width="325dp"
         android:layout_height="49dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/register_driver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout8"
+        android:textStyle="bold"
+        app:layout_constraintCircleRadius="6dp" />
+
+    <Button
+        android:id="@+id/request_cancel"
+        android:layout_width="325dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
+        android:shadowRadius="@integer/material_motion_duration_medium_1"
+        android:text="@string/request_cancel"
+        android:textColor="@color/BlueAsh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/request_leave2"
+        android:onClick="goHome" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

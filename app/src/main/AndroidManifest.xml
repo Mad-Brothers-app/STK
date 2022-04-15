@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSeatReserve">
         <activity
+            android:name=".leave_request"
+            android:exported="true" />
+        <activity
+            android:name=".driver_content"
+            android:exported="true" />
+        <activity
             android:name=".register_driver"
             android:exported="true" />
-
         <activity
             android:name=".SEATT"
             android:exported="false" />
