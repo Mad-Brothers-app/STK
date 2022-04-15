@@ -10,5 +10,6 @@
     <color name="bg">#E5E5E5</color>
     <color name="ash">#D0CECF</color>
     <color name="blue">#0000ff</color>
+    <color name="BlueAsh">#414654</color>
 
 </resources>
