@@ -6,19 +6,29 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class leave_request extends AppCompatActivity {
 
     private DatePickerDialog dpl;
     private EditText dateStart, dateEnd;
+    Button btn_register, btn_cancel;
+
+    private EditText name, reason, pno, startDate, endDate, Route;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,62 @@ public class leave_request extends AppCompatActivity {
         dateEnd = findViewById(R.id.date_leave_end);
         dateStart.setText(getTodaysDate());
         dateEnd.setText(getLastDate());
+
+        name = (EditText) findViewById(R.id.fullName);
+        reason = (EditText) findViewById(R.id.email);
+        pno = (EditText) findViewById(R.id.route);
+        startDate = (EditText) findViewById(R.id.date_leave_start);
+        endDate = (EditText) findViewById(R.id.date_leave_end);
+        Route = (EditText) findViewById(R.id.con_passsword);
+        btn_register = (Button) findViewById(R.id.reg_leave);
+        btn_cancel = (Button) findViewById(R.id.request_cancel);
+
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertLeave();
+
+            }
+        });
+
+        btn_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+    }
+
+
+    private void insertLeave() {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", name.getText().toString());
+        map.put("reason", reason.getText().toString());
+        map.put("pno", pno.getText().toString());
+        map.put("startDate", startDate.getText().toString());
+        map.put("endDate", endDate.getText().toString());
+
+        FirebaseDatabase.getInstance().getReference().child("leave").push()
+                .setValue(map)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(leave_request.this, "Data inserted Successfully", Toast.LENGTH_SHORT);
+
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(Exception e) {
+                        Toast.makeText(leave_request.this, "Data not inserted ..", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+
     }
 
     private String getLastDate() {
@@ -81,7 +147,6 @@ public class leave_request extends AppCompatActivity {
     }
 
     private String getMonthFormat(int month) {
-
         if (month == 1)
             return "JAN";
         if (month == 2)
@@ -106,7 +171,6 @@ public class leave_request extends AppCompatActivity {
             return "NOV";
         if (month == 12)
             return "DEC";
-
         //default should never happen
         return "JAN";
     }
@@ -120,6 +184,8 @@ public class leave_request extends AppCompatActivity {
         Intent i = new Intent(this, driver_content.class);
         startActivity(i);
     }
+
+
 }
 
 
