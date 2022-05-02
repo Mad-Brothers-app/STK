@@ -12,47 +12,57 @@
         android:layout_height="wrap_content"
         android:padding="15dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-
-            android:src="@mipmap/ic_launcher"
-            app:civ_border_color="@color/BlueAsh"
-            app:civ_border_width="2dp" />
 
         <TextView
             android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/img1"
             android:text="Gawsan"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txtemail"
+            android:id="@+id/txtReason"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/txtName"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/img1"
-
-            android:text="Email"
+            android:text="Reason"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/type"
+            android:id="@+id/startDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtemail"
+            android:layout_below="@id/txtReason"
             android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/img1"
-            android:text="Type"
+            android:text="start Date"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/endDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/startDate"
+            android:layout_marginLeft="20dp"
+            android:text="End Date"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtpno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/endDate"
+            android:layout_marginLeft="20dp"
+            android:text="Phone number"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -60,7 +70,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/type"
+            android:layout_below="@id/txtpno"
             android:orientation="horizontal">
 
             <Button

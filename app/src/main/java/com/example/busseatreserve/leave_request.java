@@ -38,7 +38,7 @@ public class leave_request extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_leave_request);
         dateStart = findViewById(R.id.date_leave_start);
-        dateEnd = findViewById(R.id.date_leave_end);
+        dateEnd = findViewById(R.id.user_password);
         dateStart.setText(getTodaysDate());
         dateEnd.setText(getLastDate());
 
@@ -46,7 +46,7 @@ public class leave_request extends AppCompatActivity {
         reason = (EditText) findViewById(R.id.email);
         pno = (EditText) findViewById(R.id.route);
         startDate = (EditText) findViewById(R.id.date_leave_start);
-        endDate = (EditText) findViewById(R.id.date_leave_end);
+        endDate = (EditText) findViewById(R.id.user_password);
         Route = (EditText) findViewById(R.id.con_passsword);
         btn_register = (Button) findViewById(R.id.reg_leave);
         btn_cancel = (Button) findViewById(R.id.request_cancel);

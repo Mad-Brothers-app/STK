@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/leave_reason"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/reg_email" />
@@ -66,7 +66,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone_no"
+            android:id="@+id/route"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/route" />
@@ -86,6 +86,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
 
+            android:id="@+id/lic_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/lic_no" />
@@ -104,6 +105,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
 
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/reg_password"
@@ -124,7 +126,7 @@
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/route_area"
+            android:id="@+id/con_passsword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
@@ -148,12 +150,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
         android:clipToOutline="true"
-        android:onClick="loginUser"
+        android:minHeight="48dp"
         android:text="@string/alredy_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_driver"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

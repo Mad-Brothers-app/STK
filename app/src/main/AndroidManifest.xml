@@ -3,6 +3,9 @@
     package="com.example.busseatreserve">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSeatReserve">
         <activity
-            android:name=".leave_content"
+            android:name=".leaveInfo"
+            android:exported="true" />
+        <activity
+            android:name=".forgotpassword"
+            android:exported="true" />
+        <activity
+            android:name=".Driver"
             android:exported="true" />
         <activity
             android:name=".leave_request"

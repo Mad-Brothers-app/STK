@@ -52,7 +52,7 @@
         app:startIconDrawable="@drawable/ic_edit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/leave_reason"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/leave_reason" />
@@ -70,7 +70,7 @@
         app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone_no"
+            android:id="@+id/route"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_no"
@@ -113,7 +113,7 @@
         android:clipToOutline="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/date_leave_end"
+            android:id="@+id/user_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/date_leave_end"
@@ -134,7 +134,7 @@
         app:startIconDrawable="@drawable/ic_baseline_location_on_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/route_area"
+            android:id="@+id/con_passsword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/route_area"
@@ -142,7 +142,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/request_leave2"
+        android:id="@+id/reg_leave"
         android:layout_width="325dp"
         android:layout_height="49dp"
         android:layout_marginTop="28dp"
@@ -165,7 +165,7 @@
         android:textColor="@color/BlueAsh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/request_leave2"
+        app:layout_constraintTop_toBottomOf="@+id/reg_leave"
         android:onClick="goHome" />
 
 
