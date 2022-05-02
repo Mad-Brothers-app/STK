@@ -22,8 +22,7 @@ public class driver_content extends AppCompatActivity {
     private TextView uname, route;
     private ImageButton logout_btn;
     private FirebaseAuth firebaseAuth;
-    private ImageButton leaveInfo_btn;
-
+    ImageButton leaveRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,31 +33,25 @@ public class driver_content extends AppCompatActivity {
         setContentView(R.layout.activity_driver_content);
 
         uname = findViewById(R.id.user_name_profile);
-        route = findViewById(R.id.route);
+        route = findViewById(R.id.pno_et);
         logout_btn = findViewById(R.id.logout_btn);
-        leaveInfo_btn = findViewById(R.id.leaveRequest);
-
+        leaveRequest = findViewById(R.id.leaveRequest);
         firebaseAuth = FirebaseAuth.getInstance();
 
         loadmyInfo();
-
+        leaveRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(driver_content.this, LeaveContent.class));
+            }
+        });
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 firebaseAuth.signOut();
-
             }
         });
-        leaveInfo_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(driver_content.this, leaveAdapter.class));
-            }
-        });
-
     }
-
-
     private void loadmyInfo() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("driver");
         ref.orderByChild("uid").equalTo(firebaseAuth.getUid())
@@ -71,12 +64,8 @@ public class driver_content extends AppCompatActivity {
 
                             uname.setText("Hello " + name);
                             route.setText(route_view);
-
-
                         }
-
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 

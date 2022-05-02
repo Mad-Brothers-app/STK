@@ -78,7 +78,7 @@
         app:layout_constraintBottom_toTopOf="@+id/leaveRequest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.984"
-        app:layout_constraintStart_toEndOf="@+id/route"
+        app:layout_constraintStart_toEndOf="@+id/pno_et"
         app:srcCompat="@drawable/ic_baseline_exit_to_app_24" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -89,7 +89,7 @@
         app:layout_constraintGuide_begin="27dp" />
 
     <TextView
-        android:id="@+id/route"
+        android:id="@+id/pno_et"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

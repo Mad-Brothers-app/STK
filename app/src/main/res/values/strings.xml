@@ -1,25 +1,40 @@
 <resources>
-    <string name="app_name">BusSeatReserve</string>
-    <string name="username">UserName</string>
-    <string name="dLoginbtn">Login</string>
-    <string name="fPassword">Forgot password ?</string>
-    <string name="login_txt">Login</string>
-    <string name="dPassword">Password :</string>
-    <string name="dEmail">User Name :</string>
-    <string name="uName">User Name</string>
-    <string name="uPassword">Password</string>
-    <string name="title_activity_seat">Seat</string>
-    <string name="leave">Leave request</string>
+    <string name="app_name">STK</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="login_btn">login</string>
+    <string name="wc_login">Login</string>
+    <string name="user_name">Email</string>
+    <string name="forgot_pwd">forgot password ?</string>
+    <string name="password">Password</string>
+    <string name="new_account">"Create new account "</string>
+    <string name="title_activity_register_driver">register_driver</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="dr_name">Gawsan R</string>
-    <string name="totaljobs">1845</string>
-    <string name="jobs">Jobs</string>
+    <string name="register_msg">Driver Register</string>
+    <string name="fullName">Name</string>
+    <string name="reg_email">Email</string>
+    <string name="route">Route Area</string>
+    <string name="lic_no">License No</string>
+    <string name="reg_password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="register_driver">Register</string>
+    <string name="alredy_account">Alredy have account ? login</string>
+    <string name="user_name_profile">User name</string>
+    <string name="user_name_sal">Hello User Name !</string>
+    <string name="wc_leave">Leave Request</string>
+    <string name="leave_reason">Reason for Leave</string>
+    <string name="phone_no">Phone Number</string>
+    <string name="date_leave">Date start</string>
+    <string name="date_leave_end">Date end</string>
+    <string name="request_cancel">cancel</string>
+    <string name="route_area">Your route</string>
+    <string name="date_leave_start">check</string>
 
 
 </resources>

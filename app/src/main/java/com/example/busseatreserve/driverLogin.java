@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -47,7 +46,7 @@ public class driverLogin extends AppCompatActivity {
 
         //init ui views
         email_et = (EditText) findViewById(R.id.user_name);
-        password_et = (EditText) findViewById(R.id.user_password);
+        password_et = (EditText) findViewById(R.id.date_end);
         forgot_pwd_et = (TextView) findViewById(R.id.forgot_pwd);
         reg = (Button) findViewById(R.id.new_account);
         login_btn = findViewById(R.id.login_btn);

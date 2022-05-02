@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PatternMatcher;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -55,11 +54,11 @@ public class register_driver extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
 
         fullname_et = (EditText) findViewById(R.id.fullName);
-        Email_et = (EditText) findViewById(R.id.email);
-        Route_et = (EditText) findViewById(R.id.route);
+        Email_et = (EditText) findViewById(R.id.reason_et);
+        Route_et = (EditText) findViewById(R.id.pno_et);
         licNo_et = (EditText) findViewById(R.id.lic_no);
         password_et = (EditText) findViewById(R.id.password);
-        confirmPassword_et = (EditText) findViewById(R.id.con_passsword);
+        confirmPassword_et = (EditText) findViewById(R.id.route_et);
         reg_btn = (Button) findViewById(R.id.register_driver);
 
         reg_btn.setOnClickListener(new OnClickListener() {

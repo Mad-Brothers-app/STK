@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSeatReserve">
         <activity
-            android:name=".leaveInfo"
+            android:name=".LeaveContent"
             android:exported="true" />
         <activity
             android:name=".forgotpassword"
