@@ -27,7 +27,6 @@ public class LeaveContent extends AppCompatActivity {
         });
         showLeaveUI();
     }
-
     private void showLeaveUI() {
         //show leave request ui
 

@@ -1,5 +1,5 @@
 package com.example.busseatreserve;
-
+//creating variable
 public class ModelLeave {
     private String leaveID;
     private String leaveType;
@@ -14,7 +14,7 @@ public class ModelLeave {
     public ModelLeave() {
     }
 
-
+    //overloaded constructor
     public ModelLeave(String leaveID, String leaveType, String route, String sdate, String edate, String name, String pno, String timeStamp, String uid) {
         this.leaveID = leaveID;
         this.leaveType = leaveType;

@@ -56,31 +56,16 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
-
-        <LinearLayout
-            android:layout_below="@id/route"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/des_card"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp">
+            android:layout_below="@+id/startDate"
+            android:layout_marginLeft="350dp"
+            android:src="@drawable/ic_baseline_navigate_next_24" />
 
-            <Button
-                android:id="@+id/btnEdit"
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="Edit"
-                android:textAllCaps="false" />
-
-            <Button
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
-                android:text="Delete"
-                android:textAllCaps="false"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/btnDelete" />
-        </LinearLayout>
 
     </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>

@@ -171,10 +171,7 @@ public class register_driver extends AppCompatActivity {
                         progressDialog.dismiss();
                         startActivity(new Intent(register_driver.this, register_driver.class));
                         finish();
-
                     }
                 });
     }
-
-
 }

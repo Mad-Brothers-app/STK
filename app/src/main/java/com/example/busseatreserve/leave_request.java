@@ -2,7 +2,6 @@ package com.example.busseatreserve;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -18,13 +17,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -48,7 +45,7 @@ public class leave_request extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_leave_request);
 
-
+        //getting text values ..
         name_et = findViewById(R.id.fullName);
         reason_et = findViewById(R.id.reason_et);
         pno_et = findViewById(R.id.pno_et);
@@ -57,9 +54,8 @@ public class leave_request extends AppCompatActivity {
         Route_et = findViewById(R.id.route_et);
         btn_register = findViewById(R.id.reg_leave);
         btn_cancel = findViewById(R.id.request_cancel);
-
+        //firebase connection progress connection
         firebaseAuth = FirebaseAuth.getInstance();
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please Wait ..");
         progressDialog.setCanceledOnTouchOutside(false);
@@ -101,6 +97,7 @@ public class leave_request extends AppCompatActivity {
         p_no = pno_et.getText().toString().trim();
         route = Route_et.getText().toString().trim();
 
+        //validation and toast instruction all fields
         if (TextUtils.isEmpty(fullname)) {
             Toast.makeText(this, "name is required", Toast.LENGTH_SHORT).show();
             return;
@@ -130,7 +127,6 @@ public class leave_request extends AppCompatActivity {
         }
         addLeave();
     }
-
     private void addLeave() {
         progressDialog.setMessage("Adding Leave..");
         progressDialog.show();
@@ -166,13 +162,9 @@ public class leave_request extends AppCompatActivity {
                         //failed to add
                         progressDialog.dismiss();
                         Toast.makeText(leave_request.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
                 });
-
-
     }
-
     private void categoryDialog() {
         //dialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -191,7 +183,6 @@ public class leave_request extends AppCompatActivity {
                 .show();
 
     }
-
 
     private String getLastDate() {
         Calendar cal = Calendar.getInstance();
@@ -238,6 +229,7 @@ public class leave_request extends AppCompatActivity {
         return String.format("%s %d  %d", getMonthFormat(month), day, year);
     }
 
+    //changing month month as jan,feb
     private String getMonthFormat(int month) {
         if (month == 1)
             return "JAN";
@@ -276,7 +268,6 @@ public class leave_request extends AppCompatActivity {
         Intent i = new Intent(this, driver_content.class);
         startActivity(i);
     }
-
 
 }
 
