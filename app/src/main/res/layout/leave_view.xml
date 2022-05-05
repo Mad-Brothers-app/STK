@@ -74,7 +74,8 @@
             android:layout_height="wrap_content"
             android:text="Name of the driver"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/leave_type"
@@ -123,6 +124,5 @@
 
 
     </LinearLayout>
-
 
 </RelativeLayout>

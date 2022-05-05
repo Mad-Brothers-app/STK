@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSeatReserve">
         <activity
+            android:name=".EditLeave"
+            android:exported="true" />
+        <activity
             android:name=".LeaveContent"
             android:exported="true" />
         <activity
