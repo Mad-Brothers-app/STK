@@ -9,4 +9,11 @@ public class Constants {
             "Celebration Leave",
             "Others"
     };
+    public static final String[] productCatgories1 = {
+            "All",
+            "Medical Leave",
+            "Casual Leave",
+            "Celebration Leave",
+            "Others"
+    };
 }

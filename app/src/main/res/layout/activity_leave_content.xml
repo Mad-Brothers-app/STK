@@ -72,18 +72,19 @@
             android:hint="Search"
             android:padding="10dp" />
 
+        <!--recyclerView-->
         <ImageView
             android:id="@+id/filterLeave"
             android:layout_width="52dp"
             android:layout_height="52dp"
             android:layout_alignEnd="@+id/searchLeave_btn"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="-76dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="-54dp"
             android:background="@null"
             android:scaleType="fitXY"
             android:src="@drawable/ic_gray_dash" />
-        <!--recyclerView-->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/leaveRv"
             android:layout_width="match_parent"
@@ -94,8 +95,6 @@
             android:layout_marginBottom="5dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/single_leave_view" />
-
     </RelativeLayout>
-
 
 </RelativeLayout>

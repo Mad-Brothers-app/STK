@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -87,7 +88,7 @@ public class AdapterLeave extends RecyclerView.Adapter<AdapterLeave.HolderView> 
             startDate = itemView.findViewById(R.id.startDate);
             endDate = itemView.findViewById(R.id.endDate);
             route = itemView.findViewById(R.id.route);
-            details = itemView.findViewById(R.id.des_card);
+            // details = itemView.findViewById(R.id.des_card);
         }
     }
 }

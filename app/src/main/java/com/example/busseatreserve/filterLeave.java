@@ -43,7 +43,7 @@ public class filterLeave extends Filter {
             results.values = filterList;
 
         }
-        return null;
+        return results;
     }
 
     @Override

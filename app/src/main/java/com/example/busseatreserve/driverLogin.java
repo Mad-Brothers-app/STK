@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class driverLogin extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
@@ -111,4 +112,11 @@ public class driverLogin extends AppCompatActivity {
                     }
                 });
     }
+
+    public void onStart() {
+        super.onStart();
+        firebaseAuth.getCurrentUser();
+
+    }
 }
+

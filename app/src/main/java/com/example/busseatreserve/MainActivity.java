@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, driverLogin.class));
 
             }
-        }, 2000);
+        }, 1000);
 
     }
 }
