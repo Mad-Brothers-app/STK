@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/HP/AndroidStudioProjects/BusSeatReservation/app/src/main/res/layout/activity_bus_route_display.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/BusSeatReservation/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/drawable/ic_back_black.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/drawable/ic_back_gray.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/drawable/rounded.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_bus_route_display.xml" value="0.14907407407407408" />
@@ -17,13 +19,14 @@
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_forgotpassword.xml" value="0.18125" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_leave_content.xml" value="0.19444444444444445" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_leave_info.xml" value="0.25" />
-        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_leave_request.xml" value="0.25" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_leave_request.xml" value="0.264" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_register_driver.xml" value="0.25" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/activity_seatt.xml" value="0.25" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/content_register_driver.xml" value="0.25" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/fragment_second.xml" value="0.25" />
+        <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/leave_view.xml" value="0.4" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/main_itom.xml" value="0.4" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/main_leave.xml" value="0.25" />
         <entry key="..\:/Users/gawsa/AndroidStudioProjects/STK/app/src/main/res/layout/single_leave_view.xml" value="0.1" />

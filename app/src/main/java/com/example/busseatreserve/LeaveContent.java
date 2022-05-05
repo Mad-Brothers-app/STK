@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -110,8 +109,6 @@ public class LeaveContent extends AppCompatActivity {
                                     loadFilterdLeave(selected);
 
                                 }
-
-
                             }
                         })
                         .show();
@@ -151,7 +148,6 @@ public class LeaveContent extends AppCompatActivity {
 
                     }
                 });
-
     }
 
     private void loadAllLeave() {
@@ -177,12 +173,9 @@ public class LeaveContent extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
-
     }
-
     private void showLeaveUI() {
         //show leave request ui
 
