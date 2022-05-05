@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "460898892735",
+    "firebase_url": "https://busseatreserve-default-rtdb.firebaseio.com",
     "project_id": "busseatreserve",
     "storage_bucket": "busseatreserve.appspot.com"
   },

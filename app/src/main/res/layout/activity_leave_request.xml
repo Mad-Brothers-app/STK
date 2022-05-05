@@ -52,7 +52,7 @@
         app:startIconDrawable="@drawable/ic_edit">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/leave_reason"
+            android:id="@+id/reason_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/leave_reason" />
@@ -70,7 +70,7 @@
         app:startIconDrawable="@drawable/ic_phone">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone_no"
+            android:id="@+id/pno_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_no"
@@ -113,7 +113,7 @@
         android:clipToOutline="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/date_leave_end"
+            android:id="@+id/date_end"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/date_leave_end"
@@ -134,7 +134,7 @@
         app:startIconDrawable="@drawable/ic_baseline_location_on_24">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/route_area"
+            android:id="@+id/route_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/route_area"
@@ -142,7 +142,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/request_leave2"
+        android:id="@+id/reg_leave"
         android:layout_width="325dp"
         android:layout_height="49dp"
         android:layout_marginTop="28dp"
@@ -158,15 +158,15 @@
         android:id="@+id/request_cancel"
         android:layout_width="325dp"
         android:layout_height="49dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
+        android:onClick="goHome"
         android:shadowRadius="@integer/material_motion_duration_medium_1"
         android:text="@string/request_cancel"
         android:textColor="@color/BlueAsh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/request_leave2"
-        android:onClick="goHome" />
+        app:layout_constraintTop_toBottomOf="@+id/reg_leave" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -41,6 +41,18 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.4.1'
     implementation 'com.google.firebase:firebase-database:20.0.4'
     implementation 'com.google.firebase:firebase-auth:21.0.3'
+    implementation 'com.google.firebase:firebase-storage:20.0.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // FirebaseUI for Firebase Realtime Database
+    implementation 'com.firebaseui:firebase-ui-database:8.0.1'
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.orhanobut:dialogplus:1.11@aar'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
+
+apply plugin:'com.google.gms.google-services'
+apply plugin:'com.android.application'
