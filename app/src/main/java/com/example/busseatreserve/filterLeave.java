@@ -1,5 +1,4 @@
 package com.example.busseatreserve;
-
 import android.widget.Filter;
 
 import java.util.ArrayList;
@@ -30,8 +29,6 @@ public class filterLeave extends Filter {
                         filterList.get(i).getRoute().toUpperCase().contains(constraint)) {
                     //add filter data to list
                     filteredModels.add(filterList.get(i));
-
-
                 }
             }
             results.count = filteredModels.size();

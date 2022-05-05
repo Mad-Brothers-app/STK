@@ -99,30 +99,30 @@ public class leave_request extends AppCompatActivity {
 
         //validation and toast instruction all fields
         if (TextUtils.isEmpty(fullname)) {
-            Toast.makeText(this, "name is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(leave_request.this, "name is required", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(Reason)) {
-            Toast.makeText(this, "name is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(leave_request.this, "name is required", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(start)) {
-            Toast.makeText(this, "date is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(leave_request.this, "date is required", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(end)) {
-            Toast.makeText(this, "end date is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(leave_request.this, "end date is required", Toast.LENGTH_SHORT).show();
             return;
         }
         if (p_no.length() != 10) {
-            Toast.makeText(this, "Wrong phone number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(leave_request.this, "Wrong phone number", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(route)) {
-            Toast.makeText(this, "Route is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(leave_request.this, "Route is required", Toast.LENGTH_SHORT).show();
             return;
         }
         addLeave();
@@ -153,6 +153,7 @@ public class leave_request extends AppCompatActivity {
                         //added to db
                         progressDialog.dismiss();
                         Toast.makeText(leave_request.this, "Leave Added...", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(leave_request.this, LeaveContent.class));
 
                     }
                 })
