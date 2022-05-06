@@ -2,15 +2,14 @@ package com.example.busseatreserve;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +22,7 @@ public class driver_content extends AppCompatActivity {
     private ImageButton logout_btn;
     private FirebaseAuth firebaseAuth;
     ImageButton leaveRequest;
+    private ImageButton report_call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,9 @@ public class driver_content extends AppCompatActivity {
         route = findViewById(R.id.pno_et);
         logout_btn = findViewById(R.id.logout_btn);
         leaveRequest = findViewById(R.id.leaveRequest);
+        report_call = findViewById(R.id.accidentReport);
         firebaseAuth = FirebaseAuth.getInstance();
+
 
         loadmyInfo();
         leaveRequest.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +53,20 @@ public class driver_content extends AppCompatActivity {
                 firebaseAuth.signOut();
             }
         });
+
+        report_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //call method
+                String phone = "1990";
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                startActivity(intent);
+
+            }
+        });
     }
+
+
     private void loadmyInfo() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("driver");
         ref.orderByChild("uid").equalTo(firebaseAuth.getUid())
@@ -68,10 +83,7 @@ public class driver_content extends AppCompatActivity {
                     }
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
-
     }
-
 }
