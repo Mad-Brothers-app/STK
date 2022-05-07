@@ -1,12 +1,40 @@
 <resources>
-    <string name="app_name">BusSeatReserve</string>
-    <string name="title_activity_bus_management">bus_management</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">STK Travells</string>
+    <string name="travel_name1">JDC TRAVELS</string>
+    <string name="travel_name2">NCG TRAVELS</string>
+    <string name="travel_name3">RATNA TRAVELS</string>
+    <string name="travel_name4">PRINCE TRAVELS</string>
+    <string name="travel_name5">SDK TRAVELS</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="bus_details1">JDC Travels Super Luxury  (XL)</string>
+    <string name="bus_no1">Bus no - ND-2348</string>
+    <string name="route_no1">Route no - 4813</string>
+    <string name="seat_no1">Total Seats-55</string>
+    <string name="Update1">update</string>
+    <string name="delete1">Delete</string>
+    <string name="bus_details2">JDC Travels Super Luxury  (XL)</string>
+    <string name="bus_no2">Bus no - ND-1453</string>
+    <string name="route_no2">Route no - 4643</string>
+    <string name="seat_no2">Total Seats-65</string>
+    <string name="Update2">update</string>
+    <string name="Delete2">Delete</string>
+    <string name="bus_details3">JDC Travells Mini</string>
+    <string name="bus_no3">Bus no - WP-9448</string>
+    <string name="route_no3">Route no - 4813</string>
+    <string name="seat_no3">Total Seats-30</string>
+    <string name="Update3">update</string>
+    <string name="Delete3">Delete</string>
+
+    <string name="travel_name">Enter Travel Name</string>
+    <string name="travel_nametextbox">Travel Name</string>
+    <string name="bus_no">Bus No</string>
+    <string name="travel_busnotextbox">Eg: ND-2348</string>
+    <string name="route_no">Route No</string>
+    <string name="travel_routenotextbox">Eg: 4363</string>
+    <string name="seat_no">Seat No</string>
+    <string name="travel_seatnotextbox">Enter No.of.seat</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">Submit</string>
+    <string name="bus_number">Bus No:-</string>
+    <string name="Total_seat">Total Seat:-</string>
 </resources>
