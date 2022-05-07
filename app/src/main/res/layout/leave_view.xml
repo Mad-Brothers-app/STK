@@ -59,7 +59,7 @@
         android:layout_marginTop="50dp"
         android:adjustViewBounds="true"
         android:background="#BDE2EA"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/logodriver" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -73,54 +73,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name of the driver"
+            android:textColor="@color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/black" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/leave_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
             android:text="Reason of the leave "
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingEnd="5dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/p_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
             android:text="Phone number"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingEnd="5dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/date_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
             android:text="Date start"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingEnd="5dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/date_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
             android:text="Date end "
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingEnd="5dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/route"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="5dp"
             android:text="Reason of leave"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingEnd="5dp" />
+            android:textStyle="bold" />
 
 
     </LinearLayout>

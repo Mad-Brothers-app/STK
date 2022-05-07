@@ -22,7 +22,7 @@ public class driver_content extends AppCompatActivity {
     private ImageButton logout_btn;
     private FirebaseAuth firebaseAuth;
     ImageButton leaveRequest;
-    private ImageButton report_call;
+    private ImageButton report_call, salaryRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class driver_content extends AppCompatActivity {
         logout_btn = findViewById(R.id.logout_btn);
         leaveRequest = findViewById(R.id.leaveRequest);
         report_call = findViewById(R.id.accidentReport);
+        salaryRequest = findViewById(R.id.salaryRequest);
         firebaseAuth = FirebaseAuth.getInstance();
 
 
@@ -64,6 +65,13 @@ public class driver_content extends AppCompatActivity {
 
             }
         });
+
+        salaryRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(driver_content.this, salaryCalculation.class));
+            }
+        });
     }
 
 
@@ -77,7 +85,7 @@ public class driver_content extends AppCompatActivity {
                             String name = "" + ds.child("name").getValue();
                             String route_view = "" + ds.child("route").getValue();
 
-                            uname.setText("Hello " + name);
+                            uname.setText("Hello !" + System.lineSeparator() + name);
                             route.setText(route_view);
                         }
                     }
