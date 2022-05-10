@@ -30,7 +30,6 @@ public class driverLogin extends AppCompatActivity {
     private TextView forgot_pwd_et;
     private Button login_btn, reg;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,10 +78,7 @@ public class driverLogin extends AppCompatActivity {
                 login();
             }
         });
-
-
     }
-
     private String email, password;
 
     private void login() {
@@ -90,6 +86,9 @@ public class driverLogin extends AppCompatActivity {
         password = password_et.getText().toString().trim();
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             Toast.makeText(this, "Invalid email ..", Toast.LENGTH_SHORT).show();
+        }
+        if (password.length() < 6) {
+            Toast.makeText(this, "password is empty..", Toast.LENGTH_SHORT).show();
         }
         progressDialog.setMessage("Logged in..");
         progressDialog.show();
@@ -112,11 +111,8 @@ public class driverLogin extends AppCompatActivity {
                     }
                 });
     }
-
     public void onStart() {
         super.onStart();
         firebaseAuth.getCurrentUser();
-
     }
 }
-

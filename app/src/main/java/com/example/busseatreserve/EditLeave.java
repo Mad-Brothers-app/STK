@@ -2,6 +2,7 @@ package com.example.busseatreserve;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -10,26 +11,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class leave_request extends AppCompatActivity {
+public class EditLeave extends AppCompatActivity {
+    private String LeaveId;
+
 
     private DatePickerDialog dpl;
     private EditText dateStart, dateEnd;
-    private Button btn_register, btn_cancel;
+    private Button btn_update, btn_cancel;
     private ImageButton back_btn;
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
@@ -40,10 +46,10 @@ public class leave_request extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
-        setContentView(R.layout.activity_leave_request);
+        setContentView(R.layout.activity_edit_leave);
+
+        //get id from leave id from intent
+        LeaveId = getIntent().getStringExtra("LeaveId");
 
         //getting text values ..
         name_et = findViewById(R.id.fullName);
@@ -52,44 +58,65 @@ public class leave_request extends AppCompatActivity {
         startDate_et = findViewById(R.id.date_leave_start);
         endDate_et = findViewById(R.id.date_end);
         Route_et = findViewById(R.id.route_et);
-        btn_register = findViewById(R.id.edit_Leave);
+        btn_update = findViewById(R.id.edit_Leave);
         btn_cancel = findViewById(R.id.request_cancel);
+
         //firebase connection progress connection
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please Wait ..");
         progressDialog.setCanceledOnTouchOutside(false);
 
-
-        startDate_et.setText(getTodaysDate());
-        endDate_et.setText(getLastDate());
-
-
-        reason_et.setOnClickListener(new View.OnClickListener() {
+        btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //pickCategory
-                categoryDialog();
-
-            }
-        });
-
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //add data to db
                 inputData();
 
             }
         });
 
+    }
 
+    private void loadLeaveDetails() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("driver");
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("leave").child(LeaveId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String leaveId = "" + snapshot.child("leaveID").getValue();
+                        String leaveType = "" + snapshot.child("leaveType").getValue();
+                        String route = "" + snapshot.child("route").getValue();
+                        String Sdate = "" + snapshot.child("Sdate").getValue();
+                        String Edate = "" + snapshot.child("Edate").getValue();
+                        String name = "" + snapshot.child("name").getValue();
+                        String pno = "" + snapshot.child("name").getValue();
+                        String timeStamp = "" + snapshot.child("timeStamp").getValue();
+                        String uid = "" + snapshot.child("uid").getValue();
+
+                        //set data to views
+
+                        name_et.setText(name);
+                        reason_et.setText(leaveType);
+                        pno_et.setText(pno);
+                        startDate_et.setText(Sdate);
+                        endDate_et.setText(Edate);
+                        Route_et.setText(route);
+
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
 
     private String fullname, Reason, p_no, start, end, route;
 
     private void inputData() {
+
+
         fullname = name_et.getText().toString().trim();
         Reason = reason_et.getText().toString().trim();
         start = startDate_et.getText().toString().trim();
@@ -99,91 +126,75 @@ public class leave_request extends AppCompatActivity {
 
         //validation and toast instruction all fields
         if (TextUtils.isEmpty(fullname)) {
-            Toast.makeText(leave_request.this, "name is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditLeave.this, "name is required", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(Reason)) {
-            Toast.makeText(leave_request.this, "name is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditLeave.this, "name is required", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(start)) {
-            Toast.makeText(leave_request.this, "date is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditLeave.this, "date is required", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(end)) {
-            Toast.makeText(leave_request.this, "end date is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditLeave.this, "end date is required", Toast.LENGTH_SHORT).show();
             return;
         }
         if (p_no.length() != 10) {
-            Toast.makeText(leave_request.this, "Wrong phone number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditLeave.this, "Wrong phone number", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(route)) {
-            Toast.makeText(leave_request.this, "Route is required", Toast.LENGTH_SHORT).show();
+            Toast.makeText(EditLeave.this, "Route is required", Toast.LENGTH_SHORT).show();
             return;
         }
-        addLeave();
+        UpdateLeave();
+
     }
-    private void addLeave() {
-        progressDialog.setMessage("Adding Leave..");
+
+    private void UpdateLeave() {
+        //show progress
+        progressDialog.setMessage("Updating Leave...");
         progressDialog.show();
-        String timeStamp = "" + System.currentTimeMillis();
 
-        //setup data to upload
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("leaveID", "" + timeStamp);
-        hashMap.put("leaveType", "" + Reason);
-        hashMap.put("route", "" + route);
-        hashMap.put("Sdate", "" + start);
-        hashMap.put("Edate", "" + end);
-        hashMap.put("name", "" + fullname);
-        hashMap.put("pno", "" + p_no);
-        hashMap.put("timeStamp", "" + timeStamp);
-        hashMap.put("uid", "" + firebaseAuth.getUid());
+        //hashmap to update
+        HashMap<String, Object> hashmap = new HashMap<>();
+        hashmap.put("LeaveId", "" + LeaveId);
+        hashmap.put("fullname", "" + fullname);
+        hashmap.put("Reason", "" + Reason);
+        hashmap.put("dateStart", "" + dateStart);
+        hashmap.put("dateEnd", "" + dateEnd);
+        hashmap.put(" p_no", "" + p_no);
+        hashmap.put("route", "" + route);
 
-        //add to db
+        //update to db
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("driver");
-        reference.child(firebaseAuth.getUid()).child("leave").child(timeStamp).setValue(hashMap)
+        reference.child(firebaseAuth.getCurrentUser().getUid()).child("leave").child(LeaveId)
+                .updateChildren(hashmap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        //added to db
+                        //update success
                         progressDialog.dismiss();
-                        Toast.makeText(leave_request.this, "Leave Added...", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(leave_request.this, LeaveContent.class));
+                        Toast.makeText(EditLeave.this, "Leave updated ..", Toast.LENGTH_SHORT).show();
 
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //failed to add
                         progressDialog.dismiss();
-                        Toast.makeText(leave_request.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditLeave.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+
                     }
                 });
-    }
-    private void categoryDialog() {
-        //dialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Leave category")
-                .setItems(Constants.productCatgories, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        //get picked category
-                        String category = Constants.productCatgories[which];
-
-                        //set picked category
-                        reason_et.setText(category);
-
-                    }
-                })
-                .show();
 
     }
+
 
     private String getLastDate() {
         Calendar cal = Calendar.getInstance();
@@ -226,6 +237,7 @@ public class leave_request extends AppCompatActivity {
         dpl = new DatePickerDialog(this, Style, dateSetListener, year, month, day);
 
     }
+
     private String makeDateString(int day, int month, int year) {
         return String.format("%s %d  %d", getMonthFormat(month), day, year);
     }
@@ -265,11 +277,10 @@ public class leave_request extends AppCompatActivity {
     }
 
     //back to the home page
-    public void goHome(View view) {
-        Intent i = new Intent(this, driver_content.class);
-        startActivity(i);
-    }
+//    public void goHome(View view) {
+//        Intent i = new Intent(this, driver_content.class);
+//        startActivity(i);
+//    }
+
 
 }
-
-

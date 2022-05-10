@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -46,6 +45,8 @@ public class LeaveContent extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_leave_content);
+
+        //get edit text details
         addLeave_btn = findViewById(R.id.addNewLeave_btn);
         searchLeave_btn = findViewById(R.id.searchLeave_btn);
         filterLeave = findViewById(R.id.filterLeave);
@@ -101,15 +102,13 @@ public class LeaveContent extends AppCompatActivity {
                                 //get selected leave
                                 String selected = Constants.productCatgories1[i];
                                 if (selected.equals("All")) {
-                                    //laod all
+                                    //load all
                                     loadAllLeave();
                                 } else {
                                     //load filtered
                                     loadFilterdLeave(selected);
 
                                 }
-
-
                             }
                         })
                         .show();
@@ -128,15 +127,14 @@ public class LeaveContent extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        //before getting reset list
+                        LeaveList.clear();
                         for (DataSnapshot ds : snapshot.getChildren()) {
                             String productCategory = "" + ds.child("leaveType").getValue();
                             if (selected.equals(productCategory)) {
                                 ModelLeave modelLeave = ds.getValue(ModelLeave.class);
                                 LeaveList.add(modelLeave);
                             }
-                            //before getting reset list
-                            LeaveList.clear();
-
                         }
                         //set up adapter
                         adapter = new AdapterLeave(LeaveContent.this, LeaveList);
@@ -150,7 +148,6 @@ public class LeaveContent extends AppCompatActivity {
 
                     }
                 });
-
     }
 
     private void loadAllLeave() {
@@ -162,9 +159,9 @@ public class LeaveContent extends AppCompatActivity {
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        LeaveList.clear();
                         for (DataSnapshot ds : snapshot.getChildren()) {
                             //before getting reset list
-                            LeaveList.clear();
                             ModelLeave modelLeave = ds.getValue(ModelLeave.class);
                             LeaveList.add(modelLeave);
                         }
@@ -176,12 +173,9 @@ public class LeaveContent extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
-
     }
-
     private void showLeaveUI() {
         //show leave request ui
 

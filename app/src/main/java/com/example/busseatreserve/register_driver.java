@@ -14,6 +14,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -38,6 +39,7 @@ public class register_driver extends AppCompatActivity {
     private EditText licNo_et;
     private EditText password_et;
     private EditText confirmPassword_et;
+    private TextView alredy_account;
 
 
     @Override
@@ -60,6 +62,7 @@ public class register_driver extends AppCompatActivity {
         password_et = (EditText) findViewById(R.id.password);
         confirmPassword_et = (EditText) findViewById(R.id.route_et);
         reg_btn = (Button) findViewById(R.id.register_driver);
+        alredy_account = findViewById(R.id.alredy_account);
 
         reg_btn.setOnClickListener(new OnClickListener() {
             @Override
@@ -110,6 +113,12 @@ public class register_driver extends AppCompatActivity {
         }
 
         createAccount();
+        alredy_account.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(register_driver.this, driverLogin.class));
+            }
+        });
 
 
     }
@@ -138,6 +147,7 @@ public class register_driver extends AppCompatActivity {
                     }
                 });
     }
+
 
     private void saverFirebaseData() {
         progressDialog.setMessage("Saving Account ..");
