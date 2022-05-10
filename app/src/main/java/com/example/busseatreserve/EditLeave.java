@@ -1,8 +1,5 @@
 package com.example.busseatreserve;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -11,12 +8,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,13 +25,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.Calendar;
 import java.util.HashMap;
 
 public class EditLeave extends AppCompatActivity {
     private String LeaveId;
-
 
     private DatePickerDialog dpl;
     private EditText dateStart, dateEnd;
@@ -40,16 +38,23 @@ public class EditLeave extends AppCompatActivity {
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
 
+
     private EditText name_et, reason_et, pno_et, startDate_et, endDate_et, Route_et;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_edit_leave);
 
         //get id from leave id from intent
         LeaveId = getIntent().getStringExtra("LeaveId");
+        loadLeaveDetails();//to set view
+
+
 
         //getting text values ..
         name_et = findViewById(R.id.fullName);
@@ -64,7 +69,7 @@ public class EditLeave extends AppCompatActivity {
         //firebase connection progress connection
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Please Wait ..");
+        progressDialog.setTitle("Please Wait ...");
         progressDialog.setCanceledOnTouchOutside(false);
 
         btn_update.setOnClickListener(new View.OnClickListener() {
@@ -77,40 +82,6 @@ public class EditLeave extends AppCompatActivity {
 
     }
 
-    private void loadLeaveDetails() {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("driver");
-        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("leave").child(LeaveId)
-                .addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String leaveId = "" + snapshot.child("leaveID").getValue();
-                        String leaveType = "" + snapshot.child("leaveType").getValue();
-                        String route = "" + snapshot.child("route").getValue();
-                        String Sdate = "" + snapshot.child("Sdate").getValue();
-                        String Edate = "" + snapshot.child("Edate").getValue();
-                        String name = "" + snapshot.child("name").getValue();
-                        String pno = "" + snapshot.child("name").getValue();
-                        String timeStamp = "" + snapshot.child("timeStamp").getValue();
-                        String uid = "" + snapshot.child("uid").getValue();
-
-                        //set data to views
-
-                        name_et.setText(name);
-                        reason_et.setText(leaveType);
-                        pno_et.setText(pno);
-                        startDate_et.setText(Sdate);
-                        endDate_et.setText(Edate);
-                        Route_et.setText(route);
-
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-    }
 
     private String fullname, Reason, p_no, start, end, route;
 
@@ -153,8 +124,60 @@ public class EditLeave extends AppCompatActivity {
             return;
         }
         UpdateLeave();
-
     }
+    //category
+    private void categoryDialog() {
+        //dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Leave category")
+                .setItems(Constants.productCatgories, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) {
+                        //get picked category
+                        String category = Constants.productCatgories[which];
+
+                        //set picked category
+                        reason_et.setText(category);
+
+                    }
+                })
+                .show();
+    }
+
+    private void loadLeaveDetails() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("driver");
+        reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("leave").child(LeaveId)
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String leaveId = "" + snapshot.child("leaveID").getValue();
+                        String leaveType = "" + snapshot.child("leaveType").getValue();
+                        String route = "" + snapshot.child("route").getValue();
+                        String Sdate = "" + snapshot.child("Sdate").getValue();
+                        String Edate = "" + snapshot.child("Edate").getValue();
+                        String name = "" + snapshot.child("name").getValue();
+                        String pno = "" + snapshot.child("pno").getValue();
+                        String timeStamp = "" + snapshot.child("timeStamp").getValue();
+                        String uid = "" + snapshot.child("uid").getValue();
+
+                        //set data to views
+
+                        name_et.setText(name);
+                        reason_et.setText(leaveType);
+                        pno_et.setText(pno);
+                        startDate_et.setText(Sdate);
+                        endDate_et.setText(Edate);
+                        Route_et.setText(route);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+    }
+
+
 
     private void UpdateLeave() {
         //show progress
@@ -163,13 +186,13 @@ public class EditLeave extends AppCompatActivity {
 
         //hashmap to update
         HashMap<String, Object> hashmap = new HashMap<>();
-        hashmap.put("LeaveId", "" + LeaveId);
-        hashmap.put("fullname", "" + fullname);
-        hashmap.put("Reason", "" + Reason);
-        hashmap.put("dateStart", "" + dateStart);
-        hashmap.put("dateEnd", "" + dateEnd);
-        hashmap.put(" p_no", "" + p_no);
+
+        hashmap.put("leaveType", "" + Reason);
         hashmap.put("route", "" + route);
+        hashmap.put("Sdate", "" + start);
+        hashmap.put("Edate", "" + end);
+        hashmap.put("name", "" + fullname);
+        hashmap.put("pno", "" + p_no);
 
         //update to db
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("driver");
@@ -181,7 +204,7 @@ public class EditLeave extends AppCompatActivity {
                         //update success
                         progressDialog.dismiss();
                         Toast.makeText(EditLeave.this, "Leave updated ..", Toast.LENGTH_SHORT).show();
-
+                        startActivity(new Intent(EditLeave.this,LeaveContent.class));
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -192,7 +215,6 @@ public class EditLeave extends AppCompatActivity {
 
                     }
                 });
-
     }
 
 
@@ -271,16 +293,4 @@ public class EditLeave extends AppCompatActivity {
         //default should never happen
         return "JAN";
     }
-
-    public void openDatePicker(View view) {
-        dpl.show();
-    }
-
-    //back to the home page
-//    public void goHome(View view) {
-//        Intent i = new Intent(this, driver_content.class);
-//        startActivity(i);
-//    }
-
-
 }

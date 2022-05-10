@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,13 +29,15 @@ import java.util.ArrayList;
 
 public class LeaveContent extends AppCompatActivity {
 
-    private ImageButton addLeave_btn;
+    private ImageButton addLeave_btn, back_btn;
     private RecyclerView leaveRv;
     private EditText searchLeave_btn;
     private ImageView filterLeave;
     private ArrayList<ModelLeave> LeaveList;
     private AdapterLeave adapter;
     private FirebaseAuth firebaseAuth;
+    private int countLeave;
+    private TextView getLeave;
 
 
     @Override
@@ -51,10 +54,12 @@ public class LeaveContent extends AppCompatActivity {
         searchLeave_btn = findViewById(R.id.searchLeave_btn);
         filterLeave = findViewById(R.id.filterLeave);
         leaveRv = findViewById(R.id.leaveRv);
+        back_btn = findViewById(R.id.back_home);
         loadAllLeave();
         firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth = FirebaseAuth.getInstance();
+        getLeave = findViewById(R.id.totalLeaveCount);
 
 
         //search
@@ -115,6 +120,12 @@ public class LeaveContent extends AppCompatActivity {
 
             }
         });
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LeaveContent.this, driver_content.class));
+            }
+        });
     }
 
     private void loadFilterdLeave(String selected) {
@@ -152,6 +163,27 @@ public class LeaveContent extends AppCompatActivity {
 
     private void loadAllLeave() {
         LeaveList = new ArrayList<>();
+
+        //calculate total leave
+
+        //get leave details in fireBase Connection
+        DatabaseReference count = FirebaseDatabase.getInstance().getReference("driver");
+        count.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("leave").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    countLeave = (int) snapshot.getChildrenCount();
+                    getLeave.setText("Total Leave(" + Integer.toString(countLeave) + ")");
+                } else {
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //get all leaves
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("driver");
