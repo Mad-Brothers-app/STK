@@ -42,10 +42,11 @@ public class AdapterLeave extends RecyclerView.Adapter<AdapterLeave.HolderView> 
     @Override
     public HolderView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //infinate layout
+        //in here xml code will be change to java code
         View view = LayoutInflater.from(context).inflate(R.layout.single_leave_view, parent, false);
         return new HolderView(view);
     }
-
+    //create dynamic list
     @Override
     public void onBindViewHolder(@NonNull HolderView holder, int position) {
         //get data

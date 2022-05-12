@@ -1,5 +1,4 @@
 package com.example.busseatreserve;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,10 +6,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,10 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class salaryCalculation extends AppCompatActivity {
+    //default constructor
+    public salaryCalculation() {
+
+    }
 
     private ImageButton back_btn;
     private TextView salary_et;
-    private int countLeave = 0, total = 0,salary=0;
+    private int countLeave = 0, total = 0, salary = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,21 +54,27 @@ public class salaryCalculation extends AppCompatActivity {
                     total = (50000 - (countLeave * 500));
                     salary_et.setText("RS " + Integer.toString(total));
 
-                    calculationTest(countLeave,salary);
-                }
-
-                else {
+                    calculationTest(countLeave, salary);
+                } else {
                     total = 50000;
                     salary_et.setText("Rs " + Integer.toString(total));
                 }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
     }
 
-    private void calculationTest(int salary,int count) {
+    int calculationTest(int salary, int count) {
         total = (salary - (count * 500));
+        return total;
     }
+
+    public int test(int count){
+        int result=count;
+        return count;
+    }
+
 }
