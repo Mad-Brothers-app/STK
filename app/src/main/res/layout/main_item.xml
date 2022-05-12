@@ -106,6 +106,16 @@
                 android:layout_marginLeft="5dp"
                 android:id="@+id/btndelete"/>
 
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Book Again"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:background="@color/teal_200"
+                android:layout_marginLeft="7dp"
+                android:id="@+id/btnagain"/>
+
 
         </LinearLayout>
 
