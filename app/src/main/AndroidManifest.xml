@@ -15,6 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BusSeatReserve">
         <activity
+            android:name=".finalView"
+            android:exported="true"
+            android:label="@string/title_activity_final_view"
+            android:theme="@style/Theme.BusSeatReserve.NoActionBar" />
+        <activity
             android:name=".salaryCalculation"
             android:exported="true" />
         <activity

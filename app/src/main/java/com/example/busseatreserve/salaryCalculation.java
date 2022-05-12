@@ -1,5 +1,4 @@
 package com.example.busseatreserve;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,13 +16,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class salaryCalculation extends AppCompatActivity {
-
     //default constructor
     public salaryCalculation() {
 
     }
-
-    ;
 
     private ImageButton back_btn;
     private TextView salary_et;
