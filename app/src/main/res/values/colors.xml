@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+      <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#0DA89E</color>
+    <color name="purple_700">#00688B</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="seat_available">#B8B7B7</color>
+    <color name="seat_booked"> #FFA500</color>
+    <color name="seat_selected">#4CAF50</color>
+    <color name="seat_data_color">#0572C8</color>
+    <color name="noted">#C6C9CC</color>
+    <color name="button">#BDE2EA</color>
+    <color name="delete">#E74236</color>
+    <color name="defult">#A6E8F3</color>
 </resources>
