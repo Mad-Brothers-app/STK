@@ -9,7 +9,7 @@ public class calcualtionTest {
     public void setup(){
         calculateSalary=new salaryCalculation();
     }
-
+    //test for calculate salary
     @Test
     public void testSalary(){
         int result=0;
