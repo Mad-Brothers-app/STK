@@ -166,7 +166,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
         CircleImageView img1;
         TextView name,from,to,contact;
 
-        Button btndelete,btnedit;
+        Button btndelete,btnedit,btnagain;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
