@@ -34,7 +34,7 @@ public class AddActivity extends AppCompatActivity {
         name = (EditText)findViewById(R.id.txtname);
         from = (EditText)findViewById(R.id.txtfrom);
         to = (EditText)findViewById(R.id.txtto);
-       // contact = (EditText)findViewById(R.id.txtcontact);
+        //contact = (EditText)findViewById(R.id.txtcontact);
        // surl = (EditText)findViewById(R.id.txtimageurl);
 
         btnadd = (Button)findViewById(R.id.btnadd);
@@ -56,7 +56,7 @@ public class AddActivity extends AppCompatActivity {
         map.put("name",name.getText().toString());
         map.put("from",from.getText().toString());
         map.put("to",to.getText().toString());
-        //map.put("contact",contact.getText().toString());
+       // map.put("contact",contact.getText().toString());
         //map.put("surl",surl.getText().toString());
 
         FirebaseDatabase.getInstance().getReference().child("public").push()
