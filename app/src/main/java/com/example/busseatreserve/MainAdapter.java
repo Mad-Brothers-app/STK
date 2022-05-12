@@ -179,6 +179,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
 
             btnedit = (Button)itemView.findViewById(R.id.btnedit);
             btndelete = (Button)itemView.findViewById(R.id.btndelete);
+            btnagain = (Button)itemView.findViewById(R.id.btnagain);
 
         }
     }
