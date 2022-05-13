@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Route">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        // Bar
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            app:cardBackgroundColor="@color/darkblue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >>
+            <TextView
+                android:id="@+id/title5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="25dp"
+                android:text="SELECT ROUTE"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/route1"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Jaffna - Colombo" />
+
+        <Button
+            android:id="@+id/route2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Colombo - Jaffna " />
+
+        <Button
+            android:id="@+id/route3"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Point Pedro - Colombo" />
+
+        <Button
+            android:id="@+id/route4"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Colombo - Point Pedro" />
+
+        <Button
+            android:id="@+id/route5"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text="Batticaloa - Colombo" />
+
+        <Button
+            android:id="@+id/route6"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Colombo - Batticaloa" />
+
+        <Button
+            android:id="@+id/route7"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Galle - Colombo " />
+
+        <Button
+            android:id="@+id/route8"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/lightblue"
+            android:text=" Colombo - Galle " />
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
