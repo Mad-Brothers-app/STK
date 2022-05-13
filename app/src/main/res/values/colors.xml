@@ -18,4 +18,8 @@
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#455A64</color>
     <color name="colorAccent">#4CAF50</color>
+     <color name="darkblue">#243665</color>
+    <color name="lightblue">#D0EBFF</color>
+    <color name="bluegreen">#DCF2FA</color>
+    <color name="lightgreen">#B1FDE2</color>
 </resources>
