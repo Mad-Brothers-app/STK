@@ -151,6 +151,17 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
 
         // DELETE CODE END
 
+
+        holder.btnagain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(holder.btnagain.getContext(),Route.class);
+
+                holder.btnagain.getContext().startActivity(intent);
+            }
+        });
+
+
     }
 
     @NonNull
