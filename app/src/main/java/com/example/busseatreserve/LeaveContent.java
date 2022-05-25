@@ -210,7 +210,6 @@ public class LeaveContent extends AppCompatActivity {
     }
     private void showLeaveUI() {
         //show leave request ui
-
     }
 
 }

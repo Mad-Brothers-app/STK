@@ -55,6 +55,7 @@ public class driver_content extends AppCompatActivity {
             }
         });
 
+        //emergency call option
         report_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
